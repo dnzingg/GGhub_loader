@@ -8,7 +8,9 @@ local GameScripts = {
 -- oMega Obby
 [800308467] = "https://raw.githubusercontent.com/dnzingg/Main/refs/heads/main/GGhub_OMegaObby",
 -- Tennis Clash
-[85056532479796] = "https://raw.githubusercontent.com/dnzingg/Main/refs/heads/main/GGhub_TennisClash"
+[85056532479796] = "https://raw.githubusercontent.com/dnzingg/Main/refs/heads/main/GGhub_TennisClash",
+-- Saber Simulator
+[3823781113] = "https://raw.githubusercontent.com/dnzingg/Main/refs/heads/main/GGhub_SaberSimulator"
 }
 local Players = game:GetService("Players")
 local LocalPlayer = Players.LocalPlayer
