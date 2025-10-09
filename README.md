@@ -7,6 +7,4 @@
 - Tennis Clash
 - Ninja Tycoon
 
-[Click here to get the script]("loadstring(game:HttpGet("https://raw.githubusercontent.com/dnzingg/GGhub_loader/refs/heads/main/GGhub_loader"))()")
-
-[a](http://getaaa)
+[Download Script](https://www.mediafire.com/file/f5p2k3oaowl5yc5/GGhub_loader.txt/file)
