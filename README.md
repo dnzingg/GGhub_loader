@@ -6,5 +6,3 @@
 - oMega Obby
 - Tennis Clash
 - Ninja Tycoon
-
-script download:[(http://aaa)]
