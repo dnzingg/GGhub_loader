@@ -7,4 +7,4 @@
 - Tennis Clash
 - Ninja Tycoon
 
-script download: ([a])
+script download:(a)
