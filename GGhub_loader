@@ -12,7 +12,7 @@ local GameScripts = {
 -- Saber Simulator
 [3823781113] = "https://raw.githubusercontent.com/dnzingg/Main/refs/heads/main/GGhub_SaberSimulator",
 -- Just a single Simulator
-[] = "https://raw.githubusercontent.com/dnzingg/Main/refs/heads/main/GGhub_JustASingleSimulator"
+[86434508615047] = "https://raw.githubusercontent.com/dnzingg/Main/refs/heads/main/GGhub_JustASingleSimulator"
 }
 local Players = game:GetService("Players")
 local LocalPlayer = Players.LocalPlayer
