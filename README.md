@@ -1,6 +1,6 @@
-# GGhub_loader
+# GG HUB BY DNzinGG
 
-# games that the script supports:
+# Supported Games:
 - Prison Life
 - Just a single Obby
 - oMega Obby
