@@ -16,7 +16,9 @@ local GameScripts = {
 -- RIP Brainrot
 [100438336521838] = "https://raw.githubusercontent.com/dnzingg/Main/refs/heads/main/GGhub_RIPBrainrot",
 -- Dig To Earth's Core
-[81440632616906] = "https://raw.githubusercontent.com/dnzingg/Main/refs/heads/main/GGhub_DigToEarthsCore"
+[81440632616906] = "https://raw.githubusercontent.com/dnzingg/Main/refs/heads/main/GGhub_DigToEarthsCore",
+-- Steal A Vehicle
+[132195536417465] = "https://raw.githubusercontent.com/dnzingg/Main/refs/heads/main/GGhub_StealAVehicle"
 }
 
 local Players = game:GetService("Players")
