@@ -30,7 +30,7 @@ local GameScripts = {
 -- 99 Nights In The Forest(Lobby)
 [79546208627805] = SendNotification("GG hub", "Start a game first!", 3.5),
 -- 99 Nights In The Forest(Game)
-[126509999114328] = ""
+[126509999114328] = "https://raw.githubusercontent.com/dnzingg/Main/refs/heads/main/GGhub_99NightsInTheForest"
 }
 
 local Players = game:GetService("Players")
