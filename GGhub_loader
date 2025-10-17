@@ -1,3 +1,11 @@
+local function SendNotification(title, text, duration)
+game:GetService("StarterGui"):SetCore("SendNotification", {
+    Title = title or "GG hub",
+    Text = text or ""
+    Duration = duration or 2
+})
+end
+
 local GameScripts = {
 -- Prison Life
 [155615604] = "https://raw.githubusercontent.com/dnzingg/Main/refs/heads/main/GGhub_PrisonLife",
@@ -20,7 +28,7 @@ local GameScripts = {
 -- Steal A Vehicle
 [132195536417465] = "https://raw.githubusercontent.com/dnzingg/Main/refs/heads/main/GGhub_StealAVehicle",
 -- 99 Nights In The Forest(Lobby)
-[79546208627805] = "",
+[79546208627805] = SendNotification("GG hub", "Start a game first!", 3.5),
 -- 99 Nights In The Forest(Game)
 [126509999114328] = ""
 }
