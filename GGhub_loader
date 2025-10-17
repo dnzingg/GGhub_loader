@@ -18,7 +18,11 @@ local GameScripts = {
 -- Dig To Earth's Core
 [81440632616906] = "https://raw.githubusercontent.com/dnzingg/Main/refs/heads/main/GGhub_DigToEarthsCore",
 -- Steal A Vehicle
-[132195536417465] = "https://raw.githubusercontent.com/dnzingg/Main/refs/heads/main/GGhub_StealAVehicle"
+[132195536417465] = "https://raw.githubusercontent.com/dnzingg/Main/refs/heads/main/GGhub_StealAVehicle",
+-- 99 Nights In The Forest(Lobby)
+[79546208627805] = "",
+-- 99 Nights In The Forest(Game)
+[126509999114328] = ""
 }
 
 local Players = game:GetService("Players")
