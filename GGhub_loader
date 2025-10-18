@@ -34,7 +34,9 @@ local GameScripts = {
     -- 99 Nights In The Forest (Lobby)
     [79546208627805] = "notify",
     -- 99 Nights In The Forest (Game)
-    [126509999114328] = "https://raw.githubusercontent.com/dnzingg/Main/refs/heads/main/GGhub_99NightsInTheForest"
+    [126509999114328] = "https://raw.githubusercontent.com/dnzingg/Main/refs/heads/main/GGhub_99NightsInTheForest",
+    -- Cut Trees
+    [135880624242201] = "https://raw.githubusercontent.com/dnzingg/Main/refs/heads/main/GGhub_CutTrees"
 }
 
 local Players = game:GetService("Players")
