@@ -1,8 +1,8 @@
 local function SendNotification(title, text, duration)
-    local StarterGui = game:GetService("StarterGui")
+    local CoreGui = game:GetService("CoreGui")
 
     pcall(function()
-        StarterGui:SetCore("SendNotification", {
+        CoreGui:SetCore("SendNotification", {
             Title = title or "GG hub",
             Text = text or "",
             Duration = duration or 2
