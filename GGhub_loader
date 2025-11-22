@@ -40,9 +40,7 @@ local GameScripts = {
 -- [🥓INCIDENT] The Noob Experiment Battlefront
 [17457986005] = "https://raw.githubusercontent.com/dnzingg/Main/refs/heads/main/GGhub_TheNoobExperimentBattlefront",
 -- Eat The World
-[16480898254] = "https://raw.githubusercontent.com/dnzingg/Main/refs/heads/main/EatTheWorld.lua",
--- Eat The World(2 Place)
-[17776699224] = "https://raw.githubusercontent.com/dnzingg/Main/refs/heads/main/EatTheWorld.lua"
+[16480898254] = "https://raw.githubusercontent.com/dnzingg/Main/refs/heads/main/EatTheWorld.lua"
 }
 
 local Players = game:GetService("Players")
