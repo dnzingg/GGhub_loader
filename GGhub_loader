@@ -1,80 +1,57 @@
-local function SendNotification(title, text, duration)
-    local StarterGui = game:GetService("StarterGui")
-
-    pcall(function()
-        StarterGui:SetCore("SendNotification", {
-            Title = title or "GG hub",
-            Text = text or "",
-            Duration = duration or 2
-        })
-    end)
-end
-
 local GameScripts = {
-    -- Prison Life
     [155615604] = "https://raw.githubusercontent.com/dnzingg/Main/refs/heads/main/GGhub_PrisonLife",
-    -- Ninja Tycoon
     [221718525] = "https://raw.githubusercontent.com/dnzingg/Main/refs/heads/main/GGhub_NinjaTycoon",
-    -- Just a single Obby
-    [94618981088971] = "https://raw.githubusercontent.com/dnzingg/Main/refs/heads/main/GGhub_JustASingleObby",
-    -- oMega Obby
+    ["94618981088971"] = "https://raw.githubusercontent.com/dnzingg/Main/refs/heads/main/GGhub_JustASingleObby",
     [8003084678] = "https://raw.githubusercontent.com/dnzingg/Main/refs/heads/main/GGhub_OMegaObby",
-    -- Tennis Clash
-    [85056532479796] = "https://raw.githubusercontent.com/dnzingg/Main/refs/heads/main/GGhub_TennisClash",
-    -- Saber Simulator
+    ["85056532479796"] = "https://raw.githubusercontent.com/dnzingg/Main/refs/heads/main/GGhub_TennisClash",
     [3823781113] = "https://raw.githubusercontent.com/dnzingg/Main/refs/heads/main/GGhub_SaberSimulator",
-    -- Just a Simulator
-    [86434508615047] = "https://raw.githubusercontent.com/dnzingg/Main/refs/heads/main/GGhub_JustASingleSimulator",
-    -- RIP Brainrot
-    [100438336521838] = "https://raw.githubusercontent.com/dnzingg/Main/refs/heads/main/GGhub_RIPBrainrot",
-    -- Dig To Earth's Core
-    [81440632616906] = "https://raw.githubusercontent.com/dnzingg/Main/refs/heads/main/GGhub_DigToEarthsCore",
-    -- Steal A Vehicle
-    [132195536417465] = "https://raw.githubusercontent.com/dnzingg/Main/refs/heads/main/GGhub_StealAVehicle",
-    -- 99 Nights In The Forest (Lobby)
-    [79546208627805] = "notify",
-    -- 99 Nights In The Forest (Game)
-    [126509999114328] = "https://raw.githubusercontent.com/dnzingg/Main/refs/heads/main/GGhub_99NightsInTheForest",
-    -- Cut Trees
-    [135880624242201] = "https://raw.githubusercontent.com/dnzingg/Main/refs/heads/main/GGhub_CutTrees",
--- [🥓INCIDENT] The Noob Experiment Battlefront
-[17457986005] = "https://raw.githubusercontent.com/dnzingg/Main/refs/heads/main/GGhub_TheNoobExperimentBattlefront",
--- Eat The World
-[16480898254] = "https://raw.githubusercontent.com/dnzingg/Main/refs/heads/main/EatTheWorld.lua"
+    ["86434508615047"] = "https://raw.githubusercontent.com/dnzingg/Main/refs/heads/main/GGhub_JustASingleSimulator",
+    ["100438336521838"] = "https://raw.githubusercontent.com/dnzingg/Main/refs/heads/main/GGhub_RIPBrainrot",
+    ["81440632616906"] = "https://raw.githubusercontent.com/dnzingg/Main/refs/heads/main/GGhub_DigToEarthsCore",
+    ["132195536417465"] = "https://raw.githubusercontent.com/dnzingg/Main/refs/heads/main/GGhub_StealAVehicle",
+    ["79546208627805"] = "notify",
+    ["126509999114328"] = "https://raw.githubusercontent.com/dnzingg/Main/refs/heads/main/GGhub_99NightsInTheForest",
+    ["135880624242201"] = "https://raw.githubusercontent.com/dnzingg/Main/refs/heads/main/GGhub_CutTrees",
+
+    -- [🥓INCIDENT] The Noob Experiment Battlefront
+    [17457986005] = "https://raw.githubusercontent.com/dnzingg/Main/refs/heads/main/GGhub_TheNoobExperimentBattlefront",
+
+    -- Eat The World
+    [16480898254] = "https://raw.githubusercontent.com/dnzingg/Main/refs/heads/main/EatTheWorld.lua",
+
+    -- Eat The World (2 Place)
+    [17776699224] = "https://raw.githubusercontent.com/dnzingg/Main/refs/heads/main/EatTheWorld.lua"
 }
 
-local Players = game:GetService("Players")
-local LocalPlayer = Players.LocalPlayer
-
-local placeId = game.PlaceId
-local scriptUrl = GameScripts[placeId]
+local placeIdStr = tostring(game.PlaceId)
+local scriptUrl = GameScripts[placeIdStr] or GameScripts[game.PlaceId]
 
 local function SafeLoad(url)
-    local success, response = pcall(function()
+    local ok, data = pcall(function()
         return game:HttpGet(url)
     end)
 
-    if success and response and response ~= "" then
-        local loadFunc, loadErr = loadstring(response)
-        if not loadFunc then
-            warn("[GGHub] Error compiling script:", loadErr)
-            return
-        end
+    if not ok then
+        warn("[GGHub] Fetch error:", url)
+        return
+    end
 
-        local execSuccess, execErr = pcall(loadFunc)
-        if not execSuccess then
-            warn("[GGHub] Error executing script:", execErr)
-        end
-    else
-        warn("[GGHub] Failed to fetch script from URL:", url)
+    local fn, err = loadstring(data)
+    if not fn then
+        warn("[GGHub] Compile error:", err)
+        return
+    end
+
+    local ok2, execErr = pcall(fn)
+    if not ok2 then
+        warn("[GGHub] Runtime error:", execErr)
     end
 end
 
 if scriptUrl == "notify" then
-    SendNotification("GG hub", "Start a game first!", 3.5)
+    print("[GGHub] Start a game first!")
 elseif scriptUrl then
     SafeLoad(scriptUrl)
 else
-    SendNotification("GG hub", "Game not supported!", 3.5)
-    warn("[GGHub] Game not supported! PlaceId:", placeId)
+    warn("[GGHub] Game not supported! PlaceId:", game.PlaceId)
 end
